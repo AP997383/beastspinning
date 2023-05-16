@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SeatBookView">
+        <attr name="available_seat_background" format="reference"/>
+        <attr name="reserved_seat_background" format="reference"/>
+        <attr name="booked_seat_background" format="reference"/>
+        <attr name="selected_seats_background" format="reference"/>
+        <attr name="reserved_seats_text_color" format="color"/>
+        <attr name="booked_seats_text_color" format="color"/>
+        <attr name="available_seats_text_color" format="color"/>
+        <attr name="seat_size" format="dimension"/>
+        <attr name="seat_gaping" format="dimension"/>
+        <attr name="seat_text_size" format="dimension"/>
+        <attr name="seat_select_limit" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="TicketView">
+        <attr name="ticketOrientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="ticketBackgroundColor" format="color" />
+        <attr name="ticketScallopRadius" format="dimension" />
+        <attr name="ticketScallopPositionPercent" format="float" />
+        <attr name="ticketShowBorder" format="boolean" />
+        <attr name="ticketBorderWidth" format="dimension" />
+        <attr name="ticketBorderColor" format="color" />
+        <attr name="ticketShowDivider" format="boolean" />
+        <attr name="ticketDividerWidth" format="dimension" />
+        <attr name="ticketDividerPadding" format="dimension" />
+        <attr name="ticketDividerColor" format="color" />
+        <attr name="ticketDividerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="dash" value="1" />
+        </attr>
+        <attr name="ticketDividerDesign" format="enum">
+            <enum name="color" value="0" />
+            <enum name="punch" value="1" />
+        </attr>
+        <attr name="ticketDividerDashGap" format="dimension" />
+        <attr name="ticketDividerDashLength" format="dimension" />
+        <attr name="ticketCornerType" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="rounded" value="1" />
+            <enum name="scallop" value="2" />
+        </attr>
+        <attr name="ticketCornerRadius" format="dimension" />
+        <attr name="android:elevation" />
+        <attr name="ticketElevation" format="dimension" />
+        <attr name="view" format="reference" />
+        <attr name="ticketDividerLocation">
+            <flag name="none" value="0" />
+            <flag name="top" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="left" value="4" />
+            <flag name="right" value="8" />
+        </attr>
+
+        <attr name="ticketPunchLocation">
+            <flag name="none" value="0" />
+            <flag name="top" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="left" value="4" />
+            <flag name="right" value="8" />
+        </attr>
+        <attr name="ticketPunchRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TicketViewx">
+        <attr format="reference" name="tv_anchor1"/>
+        <attr format="reference" name="tv_anchor2"/>
+
+        <attr format="color" name="tv_dashColor"/>
+        <attr format="dimension" name="tv_dashSize"/>
+        <attr format="dimension" name="tv_circleSpace"/>
+        <attr format="dimension" name="tv_circleRadius"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="WeekView">
+        <attr name="firstDayOfWeek" format="enum">
+            <enum name="sunday" value="1"/>
+            <enum name="monday" value="2"/>
+            <enum name="tuesday" value="3"/>
+            <enum name="wednesday" value="4"/>
+            <enum name="thursday" value="5"/>
+            <enum name="friday" value="6"/>
+            <enum name="saturday" value="7"/>
+        </attr>
+        <attr name="hourHeight" format="dimension"/>
+        <attr name="minHourHeight" format="dimension"/>
+        <attr name="maxHourHeight" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="eventTextSize" format="dimension"/>
+        <attr name="headerColumnPadding" format="dimension"/>
+        <attr name="headerRowPadding" format="dimension"/>
+        <attr name="columnGap" format="dimension"/>
+        <attr name="headerColumnTextColor" format="color"/>
+        <attr name="noOfVisibleDays" format="integer"/>
+        <attr name="showFirstDayOfWeekFirst" format="boolean"/>
+        <attr name="headerRowBackgroundColor" format="color"/>
+        <attr name="dayBackgroundColor" format="color"/>
+        <attr name="hourSeparatorColor" format="color"/>
+        <attr name="todayBackgroundColor" format="color"/>
+        <attr name="todayHeaderTextColor" format="color"/>
+        <attr name="hourSeparatorHeight" format="dimension"/>
+        <attr name="eventTextColor" format="color"/>
+        <attr name="eventPadding" format="dimension"/>
+        <attr name="headerColumnBackground" format="color"/>
+        <attr name="dayNameLength" format="enum">
+            <enum name="length_short" value="1"/>
+            <enum name="length_long" value="2"/>
+        </attr>
+        <attr name="overlappingEventGap" format="dimension"/>
+        <attr name="eventMarginVertical" format="dimension"/>
+        <attr name="xScrollingSpeed" format="float"/>
+        <attr name="eventCornerRadius" format="dimension"/>
+        <attr name="showDistinctPastFutureColor" format="boolean"/>
+        <attr name="showDistinctWeekendColor" format="boolean"/>
+        <attr name="futureBackgroundColor" format="color"/>
+        <attr name="pastBackgroundColor" format="color"/>
+        <attr name="futureWeekendBackgroundColor" format="color"/>
+        <attr name="pastWeekendBackgroundColor" format="color"/>
+        <attr name="showNowLine" format="boolean"/>
+        <attr name="nowLineColor" format="color"/>
+        <attr name="nowLineThickness" format="dimension"/>
+        <attr name="horizontalFlingEnabled" format="boolean"/>
+        <attr name="verticalFlingEnabled" format="boolean"/>
+        <attr name="allDayEventHeight" format="dimension"/>
+        <attr name="scrollDuration" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="JCalendarMonthView">
+        <attr name="dayHeight" format="dimension"/>
+        <attr name="datetextsize" format="dimension"/>
+        <attr name="datetextcolor" format="color"/>
+        <attr name="daytextsize" format="dimension"/>
+        <attr name="daytextcolor" format="color"/>
+        <attr name="eventtextsize" format="dimension"/>
+
+
+        <attr name="datemargintop" format="dimension"/>
+        <attr name="linecolor" format="color"/>
+        <attr name="linewidth" format="dimension"/>
+
+    </declare-styleable>
+
+
+    <declare-styleable name="ImageCarousel">
+        <attr name="showTopShadow" format="boolean" />
+        <attr name="topShadowAlpha" format="float" />
+        <attr name="topShadowHeight" format="dimension" />
+
+        <attr name="showBottomShadow" format="boolean" />
+        <attr name="bottomShadowAlpha" format="float" />
+        <attr name="bottomShadowHeight" format="dimension" />
+
+        <attr name="showCaption" format="boolean" />
+        <attr name="captionMargin" format="dimension" />
+        <attr name="captionTextSize" format="dimension" />
+
+        <attr name="showIndicator" format="boolean" />
+        <attr name="indicatorMargin" format="dimension" />
+
+        <attr name="imageScaleType" format="enum">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fitStart" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+
+        <attr name="carouselBackground" format="reference|color" />
+        <attr name="imagePlaceholder" format="reference|color" />
+
+        <attr name="carouselPadding" format="dimension" />
+        <attr name="carouselPaddingStart" format="dimension" />
+        <attr name="carouselPaddingTop" format="dimension" />
+        <attr name="carouselPaddingEnd" format="dimension" />
+        <attr name="carouselPaddingBottom" format="dimension" />
+
+        <attr name="showNavigationButtons" format="boolean" />
+        <attr name="previousButtonLayout" format="reference" />
+        <attr name="previousButtonId" format="reference" />
+        <attr name="previousButtonMargin" format="dimension" />
+        <attr name="nextButtonLayout" format="reference" />
+        <attr name="nextButtonId" format="reference" />
+        <attr name="nextButtonMargin" format="dimension" />
+
+        <attr name="carouselType" format="enum">
+            <enum name="BLOCK" value="0" />
+            <enum name="SHOWCASE" value="1" />
+        </attr>
+
+        <attr name="carouselGravity" format="enum">
+            <enum name="START" value="0" />
+            <enum name="CENTER" value="1" />
+        </attr>
+
+        <attr name="scaleOnScroll" format="boolean" />
+        <attr name="scalingFactor" format="float" />
+        <attr name="autoWidthFixing" format="boolean" />
+        <attr name="autoPlay" format="boolean" />
+        <attr name="autoPlayDelay" format="integer" />
+        <attr name="infiniteCarousel" format="boolean" />
+        <attr name="touchToPause" format="boolean" />
+    </declare-styleable>
+
+</resources>

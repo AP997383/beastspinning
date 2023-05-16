@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://www.jitpack.io' }
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven { url 'https://www.jitpack.io' }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+rootProject.name = "spinning"
+include ':app'

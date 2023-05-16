@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/root_categorie"
+        app:cardCornerRadius="1dp"
+        android:layout_width="match_parent"
+        android:layout_margin="1dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:paddingEnd="1dp"
+                android:paddingStart="1dp"
+                android:paddingBottom="3dp"
+                android:paddingTop="1dp"
+                android:elevation="4dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_vertical"
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:elevation="3dp"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/location_recipe"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="match_parent"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <View
+                android:elevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_categorie"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:elevation="3dp"
+                android:layout_margin="10dp"
+                android:id="@+id/name_categorie"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/num_recipes"
+                android:layout_width="wrap_content"
+
+                android:layout_height="match_parent"/>
+            <TextView
+
+                android:layout_marginBottom="15dp"
+                android:elevation="3dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/num_recipes"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:elevation="3dp"
+                android:id="@+id/ingredients_recie"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+    <RelativeLayout
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:padding="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/corners_gray_tiket"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:src="@drawable/ic_calendar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="Mayo 21 2023"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/corners_gray_tiket"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:src="@drawable/ic_clock"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:text="45 minutos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
