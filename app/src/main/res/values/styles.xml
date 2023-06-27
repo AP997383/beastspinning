@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.MyApp.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/latobold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="TextAppearance.MyApp.DisplaySmallTitle" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/googlesans_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.MyApp.Mini" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/productbold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+    <style name="TextAppearance.MyApp.description" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/rongellining</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

@@ -42,12 +42,12 @@ class HomeViewModel
     internal fun getRecipes() {
         showLoading()
         viewModelScope.launch {
-            homeRepository.getRecipes()
+            homeRepository.getCategories()
                 .collect{
                     if(it!=null)
-                        _listRecipes.value = Resource(Status.SUCCESS, it.data,null)
+                        _listCategories.value = Resource(Status.SUCCESS, it.data,null)
                     else
-                        _listRecipes.value = Resource(Status.ERROR, RecipesResponse(arrayListOf()),null)
+                        _listCategories.value = Resource(Status.ERROR,CategoriesResponse(arrayListOf()),null)
                     hideLoading()
                 }
         }

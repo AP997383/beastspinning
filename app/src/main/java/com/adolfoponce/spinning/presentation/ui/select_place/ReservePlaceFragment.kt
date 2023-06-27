@@ -7,26 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.SearchView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.view.setPadding
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
-import com.adolfoponce.spinning.R
-import com.adolfoponce.spinning.databinding.FragmentSecondBinding
 import com.adolfoponce.spinning.databinding.FragmentSelectPlaceBinding
 import com.adolfoponce.spinning.databinding.ItemCustomFixedSizeLayout3Binding
 import com.adolfoponce.spinning.databinding.ItemCustomFixedSizeLayout4Binding
 import com.adolfoponce.spinning.domain.model.DayMontWeekModel
 import com.adolfoponce.spinning.domain.model.RecipesModel
-import com.adolfoponce.spinning.presentation.model.HomeViewModel
-import com.adolfoponce.spinning.presentation.ui.listRecipes.adapter.RecipesAdapter
+import com.adolfoponce.spinning.presentation.ui.feed.adapter.FeedAdapter
 import com.adolfoponce.spinning.utils.ui.carrousel.listener.CarouselListener
-import com.adolfoponce.spinning.utils.ui.carrousel.model.CarouselItem
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -35,7 +25,7 @@ class ReservePlaceFragment  : Fragment() {
 
     private var _binding: FragmentSelectPlaceBinding? = null
    // private val homeViewModel by activityViewModels<HomeViewModel>()
-    lateinit var adapter: RecipesAdapter
+    lateinit var adapter: FeedAdapter
     var localData:ArrayList<RecipesModel> = arrayListOf()
 
     private var seats = (
@@ -168,7 +158,7 @@ class ReservePlaceFragment  : Fragment() {
     fun filterData(query:String){
         var items_filtered :ArrayList<RecipesModel>? = arrayListOf()
 
-        adapter.updateList(items_filtered as ArrayList<RecipesModel>)
+      //  adapter.updateList(items_filtered as ArrayList<RecipesModel>)
     }
 
     override fun onDestroyView() {

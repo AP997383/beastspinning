@@ -12,4 +12,7 @@ interface ServiceApi {
     @GET(EndPoint.RECIPES)
     suspend fun getRecipes(): RecipesResponse
 
+    @GET(EndPoint.FEED)
+    suspend fun getFeed(): RecipesResponse
+
 }

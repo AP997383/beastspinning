@@ -35,7 +35,7 @@ class YapeApp: Application() {
             .dataSourceModule(DataSourceModule())
             .networkModule(
                 NetworkModule(
-                    "https://demo0212462.mockable.io/"
+                    "http://demo1252777.mockable.io/"
                 )
             )
             .build()

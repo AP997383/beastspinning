@@ -33,4 +33,9 @@
         android:id="@+id/reservePlaceFragment"
         android:name="com.adolfoponce.spinning.presentation.ui.select_place.ReservePlaceFragment"
         android:label="ReservePlaceFragment" />
+    <fragment
+        tools:layout="@layout/fragment_feed"
+        android:id="@+id/feedFragment"
+        android:name="com.adolfoponce.spinning.presentation.ui.feed.FeedFragment"
+        android:label="FeedFragment" />
 </navigation>

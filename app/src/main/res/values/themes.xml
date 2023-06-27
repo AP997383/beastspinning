@@ -1,9 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Spinning" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">@color/white</item>
+        <item name="colorOnPrimaryContainer">@color/event_color_04</item>
+
+
+        <item name="colorSecondary">@color/event_color_04</item>
+        <item name="colorOnSecondary">@color/event_color_04</item>
+        <item name="colorSecondaryContainer">@color/event_color_04</item>
+        <item name="colorOnSecondaryContainer">@color/event_color_04</item>
+
+
+
+
+        <item name="android:colorBackground">@color/white</item>
+
+        <item name="colorErrorContainer">#FFDAD6</item>
+        <item name="colorOnErrorContainer">#410002</item>
     </style>
 
     <style name="Theme.Spinning" parent="Base.Theme.Spinning" />
+
+    <style name="Theme.Spinning.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Spinning.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Spinning.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

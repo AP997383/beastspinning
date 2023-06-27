@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/CategoriesFragment">
+
+    <fragment
+        android:id="@+id/SettingStoreFragment"
+        android:name="com.adolfoponce.spinning.presentation.ui.settingStores.SettingStoreFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_setting_store">
+
+        <action
+            android:id="@+id/action_SettingStoreFragment_to_detailStoreFragment"
+            app:destination="@id/detailStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CategoriesFragment"
+        android:name="com.adolfoponce.spinning.presentation.ui.settingStores.CategoriesStoreFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_categories_store">
+
+        <action
+            android:id="@+id/action_CategoriesFragment_to_SettingStoreFragment"
+            app:destination="@id/SettingStoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailStoreFragment"
+        tools:layout="@layout/fragment_detail_store"
+        android:name="com.adolfoponce.spinning.presentation.ui.detail.DetailStoreFragment"
+        android:label="DetailStoreFragment" />
+</navigation>
