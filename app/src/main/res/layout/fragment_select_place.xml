@@ -3,6 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/zmp_ic_back_black"
+       android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/indicators_colors"
         android:layout_alignParentEnd="true"
@@ -70,10 +80,51 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_below="@+id/indicators_colors"
+        android:id="@+id/info_class"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Fecha de la clase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Nombre del instructor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+           android:text="Lugares disponibles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/info_admin"
+        android:layout_below="@+id/info_class"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:text="Selecciona tu lugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_gravity="center_horizontal"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/beasti"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
 
     <dev.jahidhasanco.seatbookview.SeatBookView
-        android:layout_below="@+id/indicators_colors"
-        android:layout_above="@+id/carousel4"
+        android:layout_below="@+id/info_admin"
+        android:layout_above="@+id/more_actions_place"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:id="@+id/layoutSeat"
@@ -82,58 +133,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        app:seat_gaping="10dp"
-        app:seat_text_size="12sp"
+        app:seat_gaping="6dp"
+        app:seat_text_size="10sp"
         app:available_seats_text_color="#59575C"
         app:seat_select_limit="2"
         />
-
-
-    <com.adolfoponce.spinning.utils.ui.carrousel.ImageCarousel
-        android:layout_above="@+id/select_hour"
-        android:id="@+id/carousel4"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        android:translationZ="8dp"
-        app:autoPlay="false"
-        app:autoPlayDelay="4000"
-        app:carouselGravity="CENTER"
-        app:carouselPaddingBottom="8dp"
-        app:autoWidthFixing="false"
-        app:carouselPaddingTop="8dp"
-        app:carouselType="SHOWCASE"
-        app:imageScaleType="centerCrop"
-        app:scaleOnScroll="true"
-        app:scalingFactor=".25"
-        app:showBottomShadow="false"
-        app:showCaption="false"
-        app:showIndicator="false"
-        app:showNavigationButtons="false"
-        app:showTopShadow="false" />
-
-    <com.adolfoponce.spinning.utils.ui.carrousel.ImageCarousel
-        android:layout_marginBottom="30dp"
+    <com.google.android.material.button.MaterialButton
+        android:text="Recargar Creditos"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/yellow"
+        android:layout_margin="10dp"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:id="@+id/more_actions_place"
         android:layout_alignParentBottom="true"
-        android:id="@+id/select_hour"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:translationZ="8dp"
-        app:autoPlay="false"
-        app:autoPlayDelay="4000"
-        app:carouselGravity="CENTER"
-        app:carouselPaddingBottom="8dp"
-        app:autoWidthFixing="false"
-        app:carouselPaddingTop="8dp"
-        app:carouselType="SHOWCASE"
-        app:imageScaleType="centerCrop"
-        app:scaleOnScroll="true"
-        app:scalingFactor=".25"
-        app:showBottomShadow="false"
-        app:showCaption="false"
-        app:showIndicator="false"
-        app:showNavigationButtons="false"
-        app:showTopShadow="false" />
-
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

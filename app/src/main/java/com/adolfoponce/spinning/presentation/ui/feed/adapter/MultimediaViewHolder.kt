@@ -17,6 +17,8 @@ class MultimediaViewHolder(val binding: ItemFeedMultimediaBinding) : androidx.re
         context: Context,
         listener: onSelectRecipe
     ) {
-
+             Glide.with(context)
+                 .load("https://images.hola.com/imagenes/estar-bien/20230227226978/spinning-consejos-utiles-primera-clase/1-208-337/spinning-t.jpg")
+                 .into(binding.image)
     }
 }

@@ -1,4 +1,4 @@
-package com.adolfoponce.spinning.presentation.ui.feed
+package com.adolfoponce.spinning.presentation.ui.explore
 
 import android.os.Build
 import android.os.Bundle
@@ -8,19 +8,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.adolfoponce.spinning.databinding.FragmentExploreBinding
 import com.adolfoponce.spinning.databinding.FragmentFeedBinding
 import com.adolfoponce.spinning.domain.model.DayMontWeekModel
 import com.adolfoponce.spinning.domain.model.RecipesModel
+import com.adolfoponce.spinning.presentation.ui.explore.adapter.ExploreAdapter
 import com.adolfoponce.spinning.presentation.ui.feed.adapter.FeedAdapter
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class FeedFragment  : Fragment() {
+class ExploreFragment  : Fragment() {
 
-    private var _binding: FragmentFeedBinding? = null
+    private var _binding: FragmentExploreBinding? = null
    // private val homeViewModel by activityViewModels<HomeViewModel>()
-    lateinit var adapter: FeedAdapter
+    lateinit var adapter: ExploreAdapter
     var localData:ArrayList<RecipesModel> = arrayListOf()
 
     private var seats = (
@@ -57,20 +59,23 @@ class FeedFragment  : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFeedBinding.inflate(inflater, container, false)
+        _binding = FragmentExploreBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = FeedAdapter(requireContext(), arrayListOf()){
+        adapter = ExploreAdapter(requireContext(), arrayListOf()){
 
         }
-        binding.listFeed.adapter = adapter
-        binding.listFeed.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+
+        binding.listaStudios.adapter=adapter
+        binding.listaStudios.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+
 
         }
+
 
     fun filterData(query:String){
         var items_filtered :ArrayList<RecipesModel>? = arrayListOf()

@@ -23,17 +23,17 @@ class MultimediaAdapter (context: Context, items:ArrayList<CategoriesModel>, lis
     }
 
     fun updateList(items:ArrayList<CategoriesModel>){
-        Log.e("XXXXXX","updateList"+items.size)
+
         this.items.clear()
         this.items.addAll(items)
         notifyDataSetChanged()
-        Log.e("XXXXXX","updateListxxx"+items.size)
+
     }
 
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): MultimediaViewHolder {
         val view =ItemFeedMultimediaBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
-        Log.e("XXXXXX","onCreateViewHolder"+items.size)
+        Log.e("XXXXeeXX","onCreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeateViewHolder"+items.size)
         return MultimediaViewHolder(view)
     }
 
@@ -45,7 +45,7 @@ class MultimediaAdapter (context: Context, items:ArrayList<CategoriesModel>, lis
     override fun onBindViewHolder(holder: MultimediaViewHolder, position: Int) {
         Log.e("XXXXXX","onBindViewHolderxxxxxxxx" + position)
       //  holder.binding.root.animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.anim_item_recycler)
-     //   holder.onBindItem(items.get(position), context,this.listener)
+        holder.onBindItem(CategoriesModel("",""), context,this.listener)
     }
 
 

@@ -103,6 +103,7 @@ dependencies {
             exclude group: 'com.android.support', module: 'support-compat'
         }
     }
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation ('com.gjiazhe:scrollparallaximageview:1.0'){
         {

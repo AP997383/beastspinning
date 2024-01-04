@@ -20,7 +20,7 @@ constructor(context: Context, attrs: AttributeSet? = null) :
     LinearLayout(context, attrs) {
 
     private var viewGroupLayout: ViewGroup
-    private var seats = ""
+    private var seats :ArrayList<String> = arrayListOf()
 
     private var title = listOf<String>()
 
@@ -194,7 +194,7 @@ constructor(context: Context, attrs: AttributeSet? = null) :
         }
     }
 
-    fun setSeatsLayoutString(seats: String): SeatBookView {
+    fun setSeatsLayoutString(seats: ArrayList<String>): SeatBookView {
         this.seats = seats
         return this
     }
@@ -305,8 +305,10 @@ constructor(context: Context, attrs: AttributeSet? = null) :
         viewGroupLayout.addView(layoutSeat)
 
         var layout: LinearLayout? = null
-        for (index in seats.indices) {
-            if (seats[index] == '/') {
+        var num =0
+        for (index in seats) {
+            num ++
+            if (index.equals("/")) {
                 layout = LinearLayout(context)
                 val paramsV = LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -317,30 +319,30 @@ constructor(context: Context, attrs: AttributeSet? = null) :
                 layout.gravity = Gravity.CENTER
 
                 layoutSeat.addView(layout)
-            } else if (seats[index] == 'U') {
+            } else if (index.equals("U")) {
                 count++
                 val view = TextView(context)
-                setSeatAttrs(index, view, layout)
+                setSeatAttrs(num, view, layout)
                 markAsBooked(view)
 
-            } else if (seats[index] == 'A') {
+            } else if (index.equals("A")) {
                 count++
                 val view = TextView(context)
-                setSeatAttrs(index, view, layout)
+                setSeatAttrs(num, view, layout)
                 markAsAvailable(view)
-            } else if (seats[index] == 'R') {
+            } else if (index.equals("R")) {
                 count++
                 val view = TextView(context)
-                setSeatAttrs(index, view, layout)
+                setSeatAttrs(num, view, layout)
                 markAsReserved(view)
 
 
-            } else if (seats[index] == 'S') {
+            } else if (index.equals("S")) {
                 count++
                 val view = TextView(context)
-                setSeatAttrs(index, view, layout)
+                setSeatAttrs(num, view, layout)
                 markAsTransparentSeat(view)
-            } else if (seats[index] == '_') {
+            } else if (index.equals("_")) {
                 val view = TextView(context)
                 val layoutParams = LinearLayout.LayoutParams(seatSize, seatSize)
                 layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping)
@@ -363,7 +365,7 @@ constructor(context: Context, attrs: AttributeSet? = null) :
         layout!!.addView(view)
         view.id = count
         if (isCustomTitle) {
-            view.text = title[index]
+            view.text = "$count"
         } else {
             view.text = "$count"
         }

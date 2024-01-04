@@ -29,13 +29,27 @@
             app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_select_place"
+        tools:layout="@layout/fragment_preview_place"
         android:id="@+id/reservePlaceFragment"
-        android:name="com.adolfoponce.spinning.presentation.ui.select_place.ReservePlaceFragment"
-        android:label="ReservePlaceFragment" />
+        android:name="com.adolfoponce.spinning.presentation.ui.select_place.PreviewPlaceFragment"
+        android:label="ReservePlaceFragment" >
+        <action
+            android:id="@+id/action_reservePlaceFragment_to_reservePlaceFragment2"
+            app:destination="@id/reservePlaceFragment2" />
+    </fragment>
     <fragment
         tools:layout="@layout/fragment_feed"
         android:id="@+id/feedFragment"
         android:name="com.adolfoponce.spinning.presentation.ui.feed.FeedFragment"
         android:label="FeedFragment" />
+    <fragment
+        tools:layout="@layout/fragment_explore"
+        android:id="@+id/exploreFragment"
+        android:name="com.adolfoponce.spinning.presentation.ui.explore.ExploreFragment"
+        android:label="ExploreFragment" />
+    <fragment
+        android:id="@+id/reservePlaceFragment2"
+        android:name="com.adolfoponce.spinning.presentation.ui.select_place.ReservePlaceFragment"
+        android:label="ReservePlaceFragment"
+        tools:layout="@layout/fragment_select_place"/>
 </navigation>

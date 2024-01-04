@@ -32,6 +32,14 @@
             android:layout_marginTop="5dp"
             android:text="23"
             android:textColor="@color/black"
+            android:id="@+id/day_of_week_place"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="23"
+            android:textColor="@color/black"
             android:id="@+id/day_place"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />

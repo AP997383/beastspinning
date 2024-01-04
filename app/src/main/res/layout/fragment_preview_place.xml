@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <com.adolfoponce.spinning.utils.ui.carrousel.ImageCarousel
+      android:layout_alignParentTop="true"
+        android:id="@+id/carousel4"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:translationZ="8dp"
+        app:autoPlay="false"
+        app:autoPlayDelay="4000"
+        app:carouselGravity="CENTER"
+        app:carouselPaddingBottom="8dp"
+        app:autoWidthFixing="false"
+        app:carouselPaddingTop="8dp"
+        app:carouselType="SHOWCASE"
+        app:imageScaleType="centerCrop"
+        app:scaleOnScroll="true"
+        app:scalingFactor=".25"
+        app:showBottomShadow="false"
+        app:showCaption="false"
+        app:showIndicator="false"
+        app:showNavigationButtons="false"
+        app:showTopShadow="false" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_horarios_pear_day"
+        android:layout_below="@+id/carousel4"
+        android:layout_width="match_parent"
+        tools:itemCount="10"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_preview_reserves_days_list"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

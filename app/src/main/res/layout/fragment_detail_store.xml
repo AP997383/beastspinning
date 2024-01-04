@@ -12,7 +12,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             android:layout_margin="10dp"
-            app:srcCompat="@drawable/beast"
+            app:srcCompat="@drawable/beasti"
             android:layout_width="match_parent"
             android:layout_height="200dp"/>
         <LinearLayout

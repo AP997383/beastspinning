@@ -3,22 +3,22 @@
 
     <item
         android:id="@+id/feedFragment"
-        android:title=""
+        android:title="Feed"
         android:icon="@drawable/ic_news_bottom_menu"/>
 
     <item
-        android:id="@+id/SecondFragment"
-        android:title=""
+        android:id="@+id/exploreFragment"
+        android:title="Expolorar"
         android:icon="@drawable/ic_calendar"/>
 
     <item
         android:id="@+id/reservePlaceFragment"
-        android:title=""
+        android:title="Reservas"
         android:icon="@drawable/ic_statistics_bottom"/>
 
     <item
         android:id="@+id/item3"
-        android:title=""
+        android:title="Perfil"
         android:icon="@drawable/ic_calendar"/>
 
 </menu>

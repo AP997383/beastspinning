@@ -9,47 +9,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.view.setPadding
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
-import com.adolfoponce.spinning.R
+import com.adolfoponce.spinning.databinding.FragmentPreviewPlaceBinding
 import com.adolfoponce.spinning.databinding.FragmentSelectPlaceBinding
 import com.adolfoponce.spinning.databinding.ItemCustomFixedSizeLayout3Binding
 import com.adolfoponce.spinning.databinding.ItemCustomFixedSizeLayout4Binding
+import com.adolfoponce.spinning.domain.model.CategoriesModel
 import com.adolfoponce.spinning.domain.model.DayMontWeekModel
 import com.adolfoponce.spinning.domain.model.RecipesModel
 import com.adolfoponce.spinning.presentation.ui.feed.adapter.FeedAdapter
+import com.adolfoponce.spinning.presentation.ui.select_place.adapter.ListaClasesPorDiaAdapter
+import com.adolfoponce.spinning.presentation.ui.settingStores.CategoriesStoreFragmentDirections
 import com.adolfoponce.spinning.utils.ui.carrousel.listener.CarouselListener
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ReservePlaceFragment  : Fragment() {
+class PreviewPlaceFragment  : Fragment() {
 
-    private var _binding: FragmentSelectPlaceBinding? = null
+    private var _binding: FragmentPreviewPlaceBinding? = null
    // private val homeViewModel by activityViewModels<HomeViewModel>()
-    lateinit var adapter: FeedAdapter
+    lateinit var adapter: ListaClasesPorDiaAdapter
     var localData:ArrayList<RecipesModel> = arrayListOf()
-
-    private var seats = arrayListOf<String>(
-        "/", "A", "A", "A", "A",
-        "/", "A", "A", "A", "A",
-        "/", "A", "A", "A", "A",
-        "/", "A", "A", "A", "A",
-        "/", "A", "A", "A", "A",
-        "/", "A", "A", "A", "A"
-    )
-
-    private var title = listOf(
-        "/", "", "1", "2", "3",
-        "/", "4", "5", "6", "7",
-        "/", "8", "9", "10", "11",
-        "/", "12", "13", "14", "15",
-        "/", "16", "17", "18", "19",
-        "/", "20", "21", "22", "23", "24",
-        "/", "20", "21", "22", "23", "24",
-        "/", "20", "21", "22", "23", "24",
-        "/", "20", "21", "22", "23", "24",
-        "/", "20", "21", "22", "23", "24"
-    )
 
 
     private val binding get() = _binding!!
@@ -58,59 +41,64 @@ class ReservePlaceFragment  : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSelectPlaceBinding.inflate(inflater, container, false)
+        _binding = FragmentPreviewPlaceBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var contador_por_fila = 0
-        var numero_mayor =0
-        var occurrences = Collections.frequency(seats, "/")
-        for(letter:String in seats){
-            if(letter.equals("/")) {
-                if(numero_mayor < contador_por_fila)
-                    numero_mayor = contador_por_fila
-                contador_por_fila = 0
+        binding.carousel4.carouselListener = object : CarouselListener {
+            override fun onCreateViewHolder(
+                layoutInflater: LayoutInflater,
+                parent: ViewGroup
+            ): ViewBinding {
+                return ItemCustomFixedSizeLayout3Binding.inflate(
+                    layoutInflater,
+                    parent,
+                    false
+                )
             }
-
-            contador_por_fila ++
-
+            override fun onBindViewHolder(
+                binding: ViewBinding,
+                item: Any,
+                position: Int
+            ) {
+                val currentBinding = binding as ItemCustomFixedSizeLayout3Binding
+                if(item is DayMontWeekModel) {
+                    var data  = item as DayMontWeekModel
+                    currentBinding.monthPlace.text = data.month
+                    currentBinding.dayPlace.text = data.day
+                    currentBinding.dayOfWeekPlace.text = data.dayOfWeek
+                }
+            }
         }
-        var size_elements = 5
-        when(numero_mayor){
-            1->size_elements =6
-            2->size_elements =6
-            3->size_elements =6
-            4->size_elements =6
-            5->size_elements =6
-            6->size_elements =6
-            7->size_elements =6
-            8->size_elements =7
-            9->size_elements =8
-            10->size_elements =9
-            11->size_elements =10
-            12->size_elements =11
-            13->size_elements =12
-            else->size_elements =3
+adapter =ListaClasesPorDiaAdapter(requireActivity(), arrayListOf(CategoriesModel("",""),CategoriesModel("",""))){
+    var action = PreviewPlaceFragmentDirections.actionReservePlaceFragmentToReservePlaceFragment2()
+    findNavController().navigate(action)
+}
+        binding.listHorariosPearDay.adapter = adapter
+        binding.listHorariosPearDay.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
 
+        val listFour = mutableListOf<DayMontWeekModel>()
+        val four = listOf(
+            "Diciembre",
+            "https://images.unsplash.com/photo-1618346136472-090de27fe8b4?w=1080",
+            "https://images.unsplash.com/photo-1544179516-b0878e1cbe48?w=1080",
+            "https://images.unsplash.com/photo-1620236104164-d2e71d7f4b1f?w=1080",
+            "https://images.unsplash.com/photo-1470104240373-bc1812eddc9f?w=1080",
+            "https://images.unsplash.com/photo-1619901373505-bb71126e5fbb?w=1080",
+        )
+        for (item in getDataList()) {
+            listFour.add(
+                DayMontWeekModel(
+                    day = item.day,
+                    month = item.month,
+                    dayOfWeek = item.dayOfWeek
+                )
+            )
         }
-        Log.e("SIZE_ELEMENTS","->>"+size_elements +"/"+numero_mayor)
-        binding.layoutSeat.setSeatsLayoutString(seats)
-            .isCustomTitle(true)
-            .setCustomTitle(title)
-            .setSeatLayoutPadding(2)
-            .setSeatSizeBySeatsColumnAndLayoutWidth(size_elements, -1)
-        binding.layoutSeat.show()
-
-
-        binding.layoutSeat.getSeatView(2).apply {
-            binding.layoutSeat.markAsTransparentSeat(this as TextView)
-            this.setBackgroundResource(R.drawable.ic_teacher)
-            this.setPadding(5)
-        }
-
+         binding.carousel4.setData(listFour)
         observeEvents()
     }
 
@@ -158,9 +146,10 @@ class ReservePlaceFragment  : Fragment() {
         val formatter = SimpleDateFormat("MMMM")
         val startDate = cal.time
         val domingo = formatter.format(startDate)
+
         val formatterDayWeek = SimpleDateFormat("E")
         val dayweek = formatterDayWeek.format(startDate)
         Log.e("DATA_WEEK","-->"+WEEK.toString() +"/" + domingo+"/"+dayweek)
-        return DayMontWeekModel(WEEK.toString(), domingo,"")
+        return DayMontWeekModel(WEEK.toString(), domingo,dayweek)
     }
 }

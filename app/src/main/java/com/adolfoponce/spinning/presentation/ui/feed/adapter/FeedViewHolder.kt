@@ -17,9 +17,7 @@ class FeedViewHolder(val binding: ItemFeedBinding) : androidx.recyclerview.widge
         context: Context,
         listener: onSelectRecipe
     ) {
-        var adapter = MultimediaAdapter(context, arrayListOf()){
-
-        }
+        var adapter = MultimediaAdapter(context, arrayListOf()){ }
          binding.listaMultimediaFeed.adapter = adapter
          binding.listaMultimediaFeed.layoutManager =LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
     }
