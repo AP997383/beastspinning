@@ -16,7 +16,7 @@ class HomeViewModelFactory(
 ) :
     AbstractSavedStateViewModelFactory(owner, defaultArgs) {
 
-    override fun <T : ViewModel?> create(key: String, clazz: Class<T>, state: SavedStateHandle): T {
+    override fun <T : ViewModel?> create(key: String, clazz: Class<T>, state: SavedStateHandle): T & Any {
         val viewModel: ViewModel = if (clazz == HomeViewModel::class.java) {
             HomeViewModel(
                 homeRepository
@@ -24,6 +24,6 @@ class HomeViewModelFactory(
         } else {
             throw RuntimeException("Unsupported view model class: $clazz")
         }
-        return viewModel as T
+        return (viewModel as T)!!
     }
 }

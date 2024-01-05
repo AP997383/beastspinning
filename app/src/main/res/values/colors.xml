@@ -14,9 +14,13 @@
     <color name="event_color_01">#59dbe0</color>
     <color name="event_color_02">#f57f68</color>
     <color name="event_color_03">#87d288</color>
-    <color name="event_color_04">#009688</color>
+    <color name="event_color_04">#4CAF50</color>
     <color name="event_color_04_trans">#1AD3C1</color>
     <color name="colorPrimary">#ff1a73e8</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff1a73e8</color>
+    <color name="color_hint_error">#EB5757</color>
+    <color name="color_input_text">#171436</color>
+    <color name="background_color_cards">#F5F5F8</color>
+    <color name="color_view_text_gray">#898989</color>
 </resources>

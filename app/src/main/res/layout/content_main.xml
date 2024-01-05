@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <RelativeLayout
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/top_bar_custom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageView
             android:layout_margin="5dp"
            android:layout_alignParentStart="true"
             android:id="@+id/open_side_bar"
@@ -21,13 +21,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="16dp"
-            app:srcCompat="@drawable/ic_user_menu" />
+            app:srcCompat="@drawable/baseline_menu_24" />
+          <TextView
+              android:layout_centerVertical="true"
+              android:fontFamily="@font/dm_sans_bold"
+              android:textSize="16dp"
+              android:text="Hola, Adolfo"
+              android:layout_centerHorizontal="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
         <ImageView
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/beasti"
-            android:layout_width="100dp"
-            android:layout_height="50dp"/>
+            android:layout_margin="5dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/open_notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@drawable/baseline_notifications_none_24" />
     </RelativeLayout>
     <fragment
         android:id="@+id/nav_host_fragment_content_main"

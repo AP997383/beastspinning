@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "87675437921",
+    "project_id": "beast-spinning",
+    "storage_bucket": "beast-spinning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87675437921:android:5349adbc6b15c64f82fb20",
+        "android_client_info": {
+          "package_name": "com.beast.spinning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlT9AhAVmtUf93RxjqymlWlSnAGsipM8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

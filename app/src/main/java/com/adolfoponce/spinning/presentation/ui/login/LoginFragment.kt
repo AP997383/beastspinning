@@ -1,5 +1,6 @@
-package com.adolfoponce.spinning.presentation.ui.explore
+package com.adolfoponce.spinning.presentation.ui.login
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -7,24 +8,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.adolfoponce.spinning.databinding.FragmentExploreBinding
+import com.adolfoponce.spinning.R
 import com.adolfoponce.spinning.databinding.FragmentFeedBinding
+import com.adolfoponce.spinning.databinding.FragmentLoginBinding
 import com.adolfoponce.spinning.domain.model.DayMontWeekModel
 import com.adolfoponce.spinning.domain.model.RecipesModel
-import com.adolfoponce.spinning.presentation.model.HomeViewModel
-import com.adolfoponce.spinning.presentation.ui.explore.adapter.ExploreAdapter
 import com.adolfoponce.spinning.presentation.ui.feed.adapter.FeedAdapter
+import com.adolfoponce.spinning.presentation.ui.profile.ZCCBottomSheetDialogShare
+import com.github.alexzhirkevich.customqrgenerator.vector.createQrVectorOptions
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorBallShape
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorColor
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorFrameShape
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorLogoPadding
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorLogoShape
+import com.github.alexzhirkevich.customqrgenerator.vector.style.QrVectorPixelShape
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ExploreFragment  : Fragment() {
-    private val homeViewModel by activityViewModels<HomeViewModel>()
-    private var _binding: FragmentExploreBinding? = null
+class LoginFragment  : Fragment() {
+
+
+    private var _binding: FragmentLoginBinding? = null
    // private val homeViewModel by activityViewModels<HomeViewModel>()
-    lateinit var adapter: ExploreAdapter
+    lateinit var adapter: FeedAdapter
     var localData:ArrayList<RecipesModel> = arrayListOf()
 
     private var seats = (
@@ -61,24 +71,19 @@ class ExploreFragment  : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentExploreBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ExploreAdapter(requireContext(), arrayListOf()){
-
+               with(binding){
+                   buttonLoginCreateAccount.setOnClickListener {
+                       findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+                   }
+               }
         }
-
-        binding.listaStudios.adapter=adapter
-        binding.listaStudios.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
-
-        homeViewModel.searchStudios()
-        observeEvents()
-        }
-
 
     fun filterData(query:String){
         var items_filtered :ArrayList<RecipesModel>? = arrayListOf()
@@ -91,6 +96,9 @@ class ExploreFragment  : Fragment() {
         _binding = null
     }
 
+
+    private fun observeEvents() {
+    }
 
     private fun getDataList(): java.util.ArrayList<DayMontWeekModel> {
         var lista = java.util.ArrayList<DayMontWeekModel>()
@@ -106,15 +114,6 @@ class ExploreFragment  : Fragment() {
                 lista.add(customWeek)
         }
         return lista
-    }
-
-    private fun observeEvents() {
-        homeViewModel.listStudios.observe(viewLifecycleOwner) {
-            if (it.data!=null) {
-                adapter.updateList(it.data)
-            }
-
-        }
     }
 
     fun createWeekObject(customWeek:Int, customYear:Int ) : DayMontWeekModel{

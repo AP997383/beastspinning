@@ -6,6 +6,7 @@ import com.adolfoponce.spinning.data.di.NetworkModule
 import com.adolfoponce.spinning.presentation.di.ApplicationComponent
 import com.adolfoponce.spinning.presentation.di.DaggerApplicationComponent
 import com.adolfoponce.spinning.presentation.di.module.ApplicationModule
+import com.google.firebase.FirebaseApp
 
 
 class YapeApp: Application() {
@@ -25,7 +26,9 @@ class YapeApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        FirebaseApp.initializeApp(this)
         configureDagger()
+
     }
 
 

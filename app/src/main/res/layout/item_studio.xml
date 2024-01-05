@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <androidx.cardview.widget.CardView
         app:contentPadding="5dp"
-        android:elevation="2dp"
-        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_margin="10dp"
                 android:id="@+id/logo_studio"
                 android:src="@drawable/icon_search"
                 app:layout_constraintTop_toTopOf="parent"
@@ -37,6 +38,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"/>
             <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/nombre_studio"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/logo_studio"
@@ -47,6 +50,8 @@
                 android:text="Nombree del eestudio" />
 
             <TextView
+                android:layout_marginStart="10dp"
+                android:id="@+id/domicilio_studio"
                 app:layout_constraintLeft_toRightOf="@+id/logo_studio"
                 app:layout_constraintTop_toBottomOf="@+id/nombre_studio"
                 android:layout_marginTop="5dp"
@@ -116,6 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_lu"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
               app:contentPadding="5dp"
@@ -127,6 +133,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_ma"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -138,6 +145,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_mi"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -149,6 +157,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_ju"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -160,6 +169,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_vi"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -171,6 +181,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_sa"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -182,6 +193,7 @@
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/day_do"
                 android:layout_margin="3dp"
                 app:cardCornerRadius="5dp"
                 app:contentPadding="5dp"
@@ -189,17 +201,6 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="Do"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_margin="3dp"
-                app:cardCornerRadius="5dp"
-                app:contentPadding="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="Lu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>

@@ -7,14 +7,15 @@ import android.view.ViewGroup
 import com.adolfoponce.spinning.databinding.ItemFeedBinding
 import com.adolfoponce.spinning.databinding.ItemStudioBinding
 import com.adolfoponce.spinning.domain.model.CategoriesModel
+import com.adolfoponce.spinning.domain.model.StudioModel
 import com.adolfoponce.spinning.presentation.ui.feed.adapter.FeedViewHolder
 import com.adolfoponce.spinning.presentation.ui.listRecipes.listeners.onSelectRecipe
 
-class ExploreAdapter (context: Context, items:ArrayList<CategoriesModel>, listener: onSelectRecipe) : androidx.recyclerview.widget.RecyclerView.Adapter<ExploreViewHolder>() {
+class ExploreAdapter (context: Context, items:ArrayList<StudioModel>, listener: onSelectRecipe) : androidx.recyclerview.widget.RecyclerView.Adapter<ExploreViewHolder>() {
 
     private  var context: Context
     private var listener: onSelectRecipe
-    private var items = arrayListOf<CategoriesModel>()
+    private var items = arrayListOf<StudioModel>()
 
     init {
         this.context =context
@@ -22,7 +23,7 @@ class ExploreAdapter (context: Context, items:ArrayList<CategoriesModel>, listen
         this.listener =listener
     }
 
-    fun updateList(items:ArrayList<CategoriesModel>){
+    fun updateList(items:ArrayList<StudioModel>){
         this.items.clear()
         this.items.addAll(items)
         notifyDataSetChanged()
@@ -37,12 +38,12 @@ class ExploreAdapter (context: Context, items:ArrayList<CategoriesModel>, listen
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return items.size
     }
 
     override fun onBindViewHolder(holder: ExploreViewHolder, position: Int) {
       //  holder.binding.root.animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.anim_item_recycler)
-        holder.onBindItem(CategoriesModel("",""), context,this.listener)
+        holder.onBindItem(items.get(position) , context,this.listener)
     }
 
 

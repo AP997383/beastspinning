@@ -3,6 +3,7 @@ package com.adolfoponce.spinning.data.repository
 import com.adolfoponce.spinning.data.network.model.response.CategoriesResponse
 import com.adolfoponce.spinning.data.network.model.response.RecipesResponse
 import com.adolfoponce.spinning.data.network.services.ServiceApi
+import com.adolfoponce.spinning.domain.model.StudioModel
 import com.adolfoponce.spinning.domain.repository.HomeRepository
 import com.adolfoponce.spinning.utils.Resource
 import kotlinx.coroutines.flow.Flow
@@ -33,6 +34,10 @@ constructor(
         } catch (e: Exception) {
             emit(Resource.error("Check Network Connection!",null))
         }
+    }
+
+    override fun searchStudios(): Flow<Resource<ArrayList<StudioModel>>> {
+        TODO("Not yet implemented")
     }
 
 }

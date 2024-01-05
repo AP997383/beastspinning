@@ -19,4 +19,19 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
+
+    <dimen name="margin_half_scaled">10dp</dimen>
+    <dimen name="margin_normal_scaled">22dp</dimen>
+    <dimen name="margin_big_scaled">30dp</dimen>
+    <dimen name="margin_large_scaled">34dp</dimen>
+    <dimen name="button_text_size_12">15sp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="btn_hovered_z">2dp</dimen>
+    <dimen name="btn_elevation">2dp</dimen>
+    <dimen name="btn_focused_z">2dp</dimen>
+    <dimen name="btn_disabled_z">0dp</dimen>
+    <dimen name="btn_disabled_elevation">0dp</dimen>
+    <dimen name="btn_z">0dp</dimen>
+
 </resources>
